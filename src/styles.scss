@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 // Import variables and mixins
-@import 'scss/variables.scss';
-@import 'scss/mixins';
+@import 'scss/mixin.scss';
+@import 'scss/variable.scss';
 
 // Reset CSS
 * {
