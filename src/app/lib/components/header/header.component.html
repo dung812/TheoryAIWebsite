@@ -1,1 +1,30 @@
-<p>header works!</p>
+<header class="fixed left-0 right-0 top-0 bg-light z-10">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-blue-600">
+      <a routerLink="/">
+        <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo"/>
+      </a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="hidden md:flex space-x-6">
+      <a
+        *ngFor="let item of navItems"
+        [href]="item.link"
+        [class.text-blue-500]="activeSection === item.id"
+        [class.font-bold]="activeSection === item.id"
+        class="nav-link"
+        (click)="scrollToSection(item.id, $event)"
+      >
+        {{ item.name }}
+      </a>
+    </nav>
+
+    <!-- Call-to-Action Buttons -->
+    <div class="flex space-x-4">
+      <a routerLink="/login" class="btn-login text-[var(--primary-500)]">Login</a>
+      <a routerLink="/signup" class="btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>

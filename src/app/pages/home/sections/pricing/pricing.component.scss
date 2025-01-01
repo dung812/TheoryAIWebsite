@@ -1,0 +1,16 @@
+.plan-card-container {
+  &.most-popular {
+    @apply border-2 border-solid border-blue-500 rounded-xl bg-[var(--primary-100)] overflow-hidden;
+    & .plan-card-content {
+      @apply border-0 rounded-none bg-[var(--primary-bg-color)];
+    }
+  }
+  & .plan-card-content {
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    @apply bg-white border-2 border-solid border-gray-200 rounded-xl p-6
+  }
+}

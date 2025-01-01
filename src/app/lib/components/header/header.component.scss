@@ -1,0 +1,16 @@
+.nav-item {
+  & .nav-link {
+    &.active {
+      @apply text-blue-500 font-bold;
+    }
+    @apply text-gray-600 hover:text-blue-500
+  }
+}
+
+.btn-login {
+  @apply border-none px-4 py-2 rounded-md hover:bg-blue-50;
+}
+
+.btn-sign-up {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600;
+}
