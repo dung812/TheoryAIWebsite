@@ -41,6 +41,7 @@ export class HeaderComponent {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.toggleMobileMenu();
     }
   }
 
@@ -63,5 +64,12 @@ export class HeaderComponent {
         }
       }
     });
+  }
+
+  toggleMobileMenu(): void {
+    const navmenu = document.getElementById('navmenu');
+    if (navmenu) {
+      navmenu.classList.toggle('mobile-nav-active');
+    }
   }
 }
