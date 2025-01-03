@@ -6,34 +6,6 @@ import { RegisterComponent } from "@pages/auth/register/register.component";
 import { HomeComponent } from "@pages/home/home.component";
 import { PageNotFoundComponent } from "@pages/screens/page-not-found/page-not-found.component";
 
-
-// export const routes: Routes = [
-//   {
-//       path: 'auth',
-//       loadChildren: async () => (await import('@pages/auth')).routes,
-//       canMatch: [authGuard({ requiresAuthentication: false })],
-//   },
-//   {
-//       path: '',
-//       loadChildren: async () => (await import('@pages/home')).routes,
-//       canMatch: [authGuard()],
-//   },
-//   {
-//       path: 'users/:username',
-//       loadChildren: async () => (await import('@pages/user')).routes,
-//       canMatch: [authGuard()],
-//   },
-//   {
-//       path: 'settings',
-//       loadChildren: async () => (await import('@pages/settings')).routes,
-//       canMatch: [authGuard()],
-//   },
-//   {
-//       path: '**',
-//       loadComponent: async () => (await import('@pages/screens/not-found/not-found.component')).NotFoundComponent,
-//   },
-// ];
-
 export const routes: Routes = [
   {
     path: '',
@@ -43,8 +15,7 @@ export const routes: Routes = [
       // Add other routes that need header and footer here
     ],
   },
-  { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'signup', component: RegisterComponent },
   { path: '**', component: PageNotFoundComponent },
   // Add other routes without header and footer here
 ];

@@ -1,4 +1,5 @@
 import { Component, HostListener, NgZone } from '@angular/core';
+import { EnvironmentService } from '@lib/services/environment.service';
 
 @Component({
   selector: 'app-header',
@@ -15,10 +16,19 @@ export class HeaderComponent {
     { name: 'FAQ', id: 'faq', link: '#faq' },
   ];
 
+  redirectLoginUrl = '';
   activeSection = 'hero';
   private scrollListener: any;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(
+    private ngZone: NgZone,
+    private environmentService: EnvironmentService
+  ) {
+    const redirectUrl = this.environmentService.getRedirectUrl();
+    if(redirectUrl) {
+      this.redirectLoginUrl = redirectUrl;
+    }
+  }
 
   ngOnInit(): void {
     // Run the scroll listener outside Angular's zone
@@ -71,5 +81,9 @@ export class HeaderComponent {
     if (navmenu) {
       navmenu.classList.toggle('mobile-nav-active');
     }
+  }
+
+  navigateToLoginPage() {
+    window.location.href = `${this.redirectLoginUrl}/login`;
   }
 }
