@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docker:build": "docker build -t theoryaiwebsite-app .",
-    "docker:run": "docker run -p 80:80 theoryaiwebsite-app"
+    "docker:run:dev": "docker run -d -p 80:80 -e APP_URL=http://localhost -e ENV_NAME=development theoryaiwebsite-app",
+    "docker:run:staging": "docker run -d -p 80:80 -e APP_URL=http://stg.theorieAI.nl -e ENV_NAME=staging theoryaiwebsite-app",
+    "docker:run:prod": "docker run -d -p 80:80 -e APP_URL=http://theorieAI.nl -e ENV_NAME=production theoryaiwebsite-app"
   },
   "private": true,
   "dependencies": {

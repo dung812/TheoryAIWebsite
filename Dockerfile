@@ -1,32 +1,34 @@
-# Step 1: Use Node.js image to build the Angular app
+# Step 1: Build the Angular application
 FROM node:18 AS build
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to install dependencies
+# Copy package files and install dependencies
 COPY package*.json ./
+RUN npm install
 
-# Install Angular CLI globally and project dependencies
-RUN npm install -g @angular/cli && npm install
-
-# Copy the rest of the application code
+# Copy the rest of the application source code
 COPY . .
 
-# Build the Angular app for production
-RUN ng build --configuration production
+# Build the Angular application for production
+RUN npm run build -- --configuration=production
 
-# Step 2: Use Nginx to serve the Angular app
-FROM nginx:stable-alpine
+# Step 2: Serve the application with NGINX
+FROM nginx:1.23
 
-# Copy the built Angular app from the build stage
+# Copy the built Angular app to the NGINX HTML directory
 COPY --from=build /app/dist/TheoryAIWebsite /usr/share/nginx/html
 
-# Copy a custom Nginx configuration file (optional)
+# Add a script to replace placeholders with environment variables
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Replace the default NGINX configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx
+# Use the startup script as the entry point
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
