@@ -1,1 +1,69 @@
-<p>register works!</p>
+<div class="w-screen h-screen flex justify-center items-center">
+
+  <form
+    [formGroup]="loginWithPaymentForm"
+    class="authentication-form flex flex-col items-center gap-4">
+    <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo"/>
+    <div
+      class="w-[calc(100%_-_32px)] border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] rounded-[8px] p-6 flex justify-between">
+      <div class="flex flex-col gap-4">
+        <div class="text-[var(--secondary-500)] font-bold text-[21px]">
+          Auto Theory
+        </div>
+        <div class="flex flex-col">
+          <div class="flex gap-1">
+            30 day access
+          </div>
+          <div class="flex gap-1">
+            7 CBR exam module
+          </div>
+        </div>
+      </div>
+      <div class="font-bold flex justify-center items-center">
+        <div>$50</div>
+      </div>
+    </div>
+    <div class="app-input w-full">
+      <label>Choose your payment method</label>
+      <app-select
+        class="w-full"
+        formControlName="payment"
+        [options]="selectOptions"></app-select>
+    </div>
+    <div class="flex gap-4">
+      <div class="social-signin">
+        <img src="assets/icons/svg/facebook.svg" alt="facebook logo"/>
+        <div>
+          Sign in with Google
+        </div>
+      </div>
+      <div class="social-signin">
+        <img src="assets/icons/svg/facebook.svg" alt="facebook logo"/>
+        <div>
+          Sign in Microsoft
+        </div>
+      </div>
+    </div>
+    <div class="app-input">
+      <label>Email</label>
+      <input matInput formControlName="email" type="email" />
+    </div>
+    <div class="app-input">
+      <label>Password</label>
+      <input matInput formControlName="password" type="password" />
+    </div>
+    <div class="flex gap-2 w-[calc(100%_-_32px)] items-start">
+      <input type="checkbox" name="" id="">
+      <div class="flex flex-col py-[5.5px]">
+        <label class="font-semibold">Label</label>
+        <div class="text-[var(--background-500)]">Description</div>
+      </div>
+    </div>
+    <button class="btn-primary w-full cursor-pointer" (click)="login()">
+      Sign In
+    </button>
+  </form>
+</div>
+
+
+

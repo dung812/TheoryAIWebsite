@@ -17,6 +17,8 @@ import { PricingComponent } from './pages/home/sections/pricing/pricing.componen
 import { HowItWorksComponent } from './pages/home/sections/how-it-works/how-it-works.component';
 import { TestimonialsComponent } from './pages/home/sections/testimonials/testimonials.component';
 import { FaqComponent } from './pages/home/sections/faq/faq.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SelectComponent } from './lib/components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { FaqComponent } from './pages/home/sections/faq/faq.component';
     PricingComponent,
     HowItWorksComponent,
     TestimonialsComponent,
-    FaqComponent
+    FaqComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
