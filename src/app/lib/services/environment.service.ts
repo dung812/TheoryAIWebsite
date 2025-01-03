@@ -22,6 +22,6 @@ export class EnvironmentService {
     } else if (envName === 'production') {
       return 'http://app.theorieai.nl';
     }
-    return 'http://app-stg.theorieai.nl';
+    return 'localhost:4200';
   }
 }
