@@ -7,6 +7,8 @@ ENV_FILE=/usr/share/nginx/html/assets/environment.js
 cat <<EOF > $ENV_FILE
 window.__env = {
   APP_URL: "${APP_URL}",
+  GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID}",
+  MICROSOFT_CLIENT_ID: "${MICROSOFT_CLIENT_ID}",
   ENV_NAME: "${ENV_NAME}"
 };
 EOF

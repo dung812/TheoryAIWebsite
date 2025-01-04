@@ -8,12 +8,13 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docker:build": "docker build -t theoryaiwebsite-app .",
-    "docker:run:dev": "docker run -d -p 80:80 -e APP_URL=http://localhost -e ENV_NAME=development theoryaiwebsite-app",
-    "docker:run:staging": "docker run -d -p 80:80 -e APP_URL=http://stg.theorieAI.nl -e ENV_NAME=staging theoryaiwebsite-app",
-    "docker:run:prod": "docker run -d -p 80:80 -e APP_URL=http://theorieAI.nl -e ENV_NAME=production theoryaiwebsite-app"
+    "docker:run:dev": "docker run -d -p 80:80 -e APP_URL=http://localhost -e GOOGLE_CLIENT_ID=509679577042-pas0d02mjss30tn9dk7a1kepq86rsvt0.apps.googleusercontent.com -e MICROSOFT_CLIENT_ID=4a45490e-7230-47aa-bc7b-f7ce93df4041 -e ENV_NAME=development theoryaiwebsite-app",
+    "docker:run:staging": "docker run -d -p 80:80 -e APP_URL=http://stg.theorieAI.nl -e GOOGLE_CLIENT_ID=509679577042-pas0d02mjss30tn9dk7a1kepq86rsvt0.apps.googleusercontent.com -e MICROSOFT_CLIENT_ID=4a45490e-7230-47aa-bc7b-f7ce93df4041 -e ENV_NAME=staging theoryaiwebsite-app",
+    "docker:run:prod": "docker run -d -p 80:80 -e APP_URL=http://theorieAI.nl -e GOOGLE_CLIENT_ID=509679577042-pas0d02mjss30tn9dk7a1kepq86rsvt0.apps.googleusercontent.com -e MICROSOFT_CLIENT_ID=4a45490e-7230-47aa-bc7b-f7ce93df4041 -e ENV_NAME=production theoryaiwebsite-app"
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "2.0.0",
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",

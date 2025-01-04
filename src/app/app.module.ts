@@ -20,6 +20,27 @@ import { FaqComponent } from './pages/home/sections/faq/faq.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SelectComponent } from './lib/components/select/select.component';
 import { PopupComponent } from './lib/components/popup/popup.component';
+import { EnvironmentService } from '@lib/services/environment.service';
+import { GoogleLoginProvider, MicrosoftLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleSigninComponent } from './lib/components/google-signin/google-signin.component';
+
+export function SocialAuthConfigFactory(envService: EnvironmentService): SocialAuthServiceConfig {
+  return {
+    autoLogin: false,
+    providers: [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider(envService.get('GOOGLE_CLIENT_ID'), { oneTapEnabled: false }),
+      },
+      {
+        id: MicrosoftLoginProvider.PROVIDER_ID,
+        provider: new MicrosoftLoginProvider(envService.get('MICROSOFT_CLIENT_ID'), {
+          redirect_uri: envService.get('APP_URL') + '/signup',
+        }),
+      },
+    ],
+  };
+}
 
 @NgModule({
   declarations: [
@@ -39,14 +60,21 @@ import { PopupComponent } from './lib/components/popup/popup.component';
     TestimonialsComponent,
     FaqComponent,
     SelectComponent,
-    PopupComponent
+    PopupComponent,
+    GoogleSigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useFactory: SocialAuthConfigFactory,
+      deps: [EnvironmentService],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

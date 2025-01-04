@@ -152,3 +152,12 @@ p {
     display: block;
   }
 }
+
+.social-signin {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 8px 24px 8px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--primary-500);
+}

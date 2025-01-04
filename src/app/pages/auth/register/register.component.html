@@ -33,13 +33,10 @@
               [options]="selectOptions"></app-select>
           </div>
           <div class="app-input !flex-row justify-between gap-4">
-            <div class="social-signin">
-              <img src="assets/icons/svg/google-icon.svg" alt="google logo"/>
-              <div>
-                Sign in with Google
-              </div>
-            </div>
-            <div class="social-signin">
+            <app-google-signin
+              (loginWithGoogle)="googleSignin($event)">
+            </app-google-signin>
+            <div class="social-signin cursor-pointer" (click)="loginWithMs()">
               <img src="assets/icons/svg/microsoft-icon.svg" alt="microsoft logo"/>
               <div>
                 Sign in Microsoft
@@ -70,7 +67,7 @@
     <div class="flex-1 basis-1/2">
       <img src="assets/imgs/svg/main-dashboard-full2.svg" alt="Dashboard" class="w-[200%]">
       <div class="text-center lg:text-left ml-9">
-        <h1 class="text-3xl font-bold mb-4 w-[72%]">Master the Dutch <span class="text-[var(--primary-500)]">Driving Theory Test</span> with <span class="text-[var(--primary-500)]">AI-Powered</span> Personalized Learning</h1>
+        <h1 class="text-3xl font-bold mb-4 w-[67%]">Master the Dutch <span class="text-[var(--primary-500)]">Driving Theory Test</span> with <span class="text-[var(--primary-500)]">AI-Powered</span> Personalized Learning</h1>
       </div>
     </div>
 

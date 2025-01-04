@@ -1,3 +1,4 @@
+import { MicrosoftLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -48,10 +49,15 @@ export class RegisterComponent {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private socialAuthService: SocialAuthService,
   ) {}
 
   ngOnInit() {
+    this.socialAuthService.authState.subscribe((user) => {
+      console.log(user);
+      this.openModal(true);
+    });
     this.initializeForm();
   }
 
@@ -80,5 +86,13 @@ export class RegisterComponent {
   selectOption(option: { name: string; price: string }) {
     this.selectedOption = option;
     this.closeModal();
+  }
+
+  googleSignin(googleWrapper: any) {
+    googleWrapper.click();
+  }
+
+  loginWithMs() {
+    this.socialAuthService.signIn(MicrosoftLoginProvider.PROVIDER_ID);
   }
 }
