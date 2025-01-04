@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  isShowQr = true; // QR code visibility
   isModalOpen = false; // Modal visibility
   selectedOption = {
     name: '30 Days Access',
@@ -67,7 +68,8 @@ export class RegisterComponent {
     this.router.navigate(['/dashboard']);
   }
 
-  openModal() {
+  openModal(isShowQr: boolean) {
+    this.isShowQr = isShowQr;
     this.isModalOpen = true;
   }
 

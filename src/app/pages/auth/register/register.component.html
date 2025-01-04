@@ -7,7 +7,7 @@
           class="authentication-form flex flex-col items-center gap-4">
           <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo" class="mb-8"/>
           <div
-            class="w-full border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] hover:bg-[var(--secondary-darker-bg-color-hover)] rounded-[8px] p-4 flex justify-between cursor-pointer" (click)="openModal()">
+            class="w-full border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] hover:bg-[var(--secondary-darker-bg-color-hover)] rounded-[8px] p-4 flex justify-between cursor-pointer" (click)="openModal(false)">
             <div class="flex flex-col gap-4">
               <div class="text-[var(--secondary-500)] font-bold text-[21px]">
                 Auto Theory
@@ -61,7 +61,7 @@
               <div class="text-[var(--background-500)]">Description</div>
             </div>
           </div>
-          <button class="btn-primary w-full cursor-pointer" (click)="login()">
+          <button class="btn-primary w-full cursor-pointer" (click)="openModal(true)">
             Sign In
           </button>
         </form>
@@ -82,20 +82,26 @@
  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
 >
  <div class="bg-white w-96 rounded-lg shadow-lg p-6 relative">
-   <h2 class="text-xl font-bold mb-4">Choose Your Plan</h2>
-   <ul>
-     <li
-       *ngFor="let option of paymentOptions"
-       class="p-3 mb-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
-       (click)="selectOption(option)"
-     >
-       <div class="flex justify-between">
-         <span>{{ option.name }}</span>
-         <span class="font-bold">{{ option.price }}</span>
-       </div>
-     </li>
-   </ul>
 
+  <div *ngIf="isShowQr; else showPaymentOptions">
+    <h2 class="text-xl font-bold mb-4">Scan QR Code</h2>
+    <img src="assets/imgs/png/qr-code.png" alt="qr code" class="w-full"/>
+  </div>
+  <ng-template #showPaymentOptions>
+    <h2 class="text-xl font-bold mb-4">Choose Your Plan</h2>
+    <ul>
+      <li
+        *ngFor="let option of paymentOptions"
+        class="p-3 mb-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
+        (click)="selectOption(option)"
+      >
+        <div class="flex justify-between">
+          <span>{{ option.name }}</span>
+          <span class="font-bold">{{ option.price }}</span>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
    <img
     (click)="closeModal()"
     src="assets/icons/svg/cancel.svg"
