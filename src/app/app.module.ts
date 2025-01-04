@@ -19,6 +19,7 @@ import { TestimonialsComponent } from './pages/home/sections/testimonials/testim
 import { FaqComponent } from './pages/home/sections/faq/faq.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SelectComponent } from './lib/components/select/select.component';
+import { PopupComponent } from './lib/components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SelectComponent } from './lib/components/select/select.component';
     HowItWorksComponent,
     TestimonialsComponent,
     FaqComponent,
-    SelectComponent
+    SelectComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

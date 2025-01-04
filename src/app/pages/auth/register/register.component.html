@@ -1,69 +1,104 @@
-<div class="w-screen h-screen flex justify-center items-center">
 
-  <form
-    [formGroup]="loginWithPaymentForm"
-    class="authentication-form flex flex-col items-center gap-4">
-    <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo"/>
-    <div
-      class="w-[calc(100%_-_32px)] border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] rounded-[8px] p-6 flex justify-between">
-      <div class="flex flex-col gap-4">
-        <div class="text-[var(--secondary-500)] font-bold text-[21px]">
-          Auto Theory
-        </div>
-        <div class="flex flex-col">
-          <div class="flex gap-1">
-            30 day access
+
+<div class="flex flex-col lg:flex-row min-h-screen p-12">
+    <div class="flex-1 basis-1/2 flex justify-center">
+      <form
+          [formGroup]="loginWithPaymentForm"
+          class="authentication-form flex flex-col items-center gap-4">
+          <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo" class="mb-8"/>
+          <div
+            class="w-full border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] hover:bg-[var(--secondary-darker-bg-color-hover)] rounded-[8px] p-4 flex justify-between cursor-pointer" (click)="openModal()">
+            <div class="flex flex-col gap-4">
+              <div class="text-[var(--secondary-500)] font-bold text-[21px]">
+                Auto Theory
+              </div>
+              <div class="flex flex-col">
+                <div class="flex gap-1">
+                  {{selectedOption.name}}
+                </div>
+                <div class="flex gap-1">
+                  7 CBR exam module
+                </div>
+              </div>
+            </div>
+            <div class="font-bold flex justify-center items-center">
+              <div>{{selectedOption.price}}</div>
+            </div>
           </div>
-          <div class="flex gap-1">
-            7 CBR exam module
+          <div class="app-input w-full">
+            <label class="mb-2">Choose your payment method</label>
+            <app-select
+              class="w-full"
+              formControlName="payment"
+              [options]="selectOptions"></app-select>
           </div>
-        </div>
+          <div class="app-input !flex-row justify-between gap-4">
+            <div class="social-signin">
+              <img src="assets/icons/svg/google-icon.svg" alt="google logo"/>
+              <div>
+                Sign in with Google
+              </div>
+            </div>
+            <div class="social-signin">
+              <img src="assets/icons/svg/microsoft-icon.svg" alt="microsoft logo"/>
+              <div>
+                Sign in Microsoft
+              </div>
+            </div>
+          </div>
+          <div class="app-input">
+            <label>Email</label>
+            <input matInput formControlName="email" type="email" />
+          </div>
+          <div class="app-input">
+            <label>Password</label>
+            <input matInput formControlName="password" type="password" />
+          </div>
+          <div class="app-input !flex-row gap-2 w-[calc(100%_-_32px)] items-start">
+            <input type="checkbox" name="" id="">
+            <div class="flex flex-col leading-4">
+              <label class="font-semibold mb-2">Label</label>
+              <div class="text-[var(--background-500)]">Description</div>
+            </div>
+          </div>
+          <button class="btn-primary w-full cursor-pointer" (click)="login()">
+            Sign In
+          </button>
+        </form>
+    </div>
+
+    <div class="flex-1 basis-1/2">
+      <img src="assets/imgs/svg/main-dashboard-full2.svg" alt="Dashboard" class="w-[200%]">
+      <div class="text-center lg:text-left ml-9">
+        <h1 class="text-3xl font-bold mb-4 w-[72%]">Master the Dutch <span class="text-[var(--primary-500)]">Driving Theory Test</span> with <span class="text-[var(--primary-500)]">AI-Powered</span> Personalized Learning</h1>
       </div>
-      <div class="font-bold flex justify-center items-center">
-        <div>$50</div>
-      </div>
     </div>
-    <div class="app-input w-full">
-      <label>Choose your payment method</label>
-      <app-select
-        class="w-full"
-        formControlName="payment"
-        [options]="selectOptions"></app-select>
-    </div>
-    <div class="flex gap-4">
-      <div class="social-signin">
-        <img src="assets/icons/svg/facebook.svg" alt="facebook logo"/>
-        <div>
-          Sign in with Google
-        </div>
-      </div>
-      <div class="social-signin">
-        <img src="assets/icons/svg/facebook.svg" alt="facebook logo"/>
-        <div>
-          Sign in Microsoft
-        </div>
-      </div>
-    </div>
-    <div class="app-input">
-      <label>Email</label>
-      <input matInput formControlName="email" type="email" />
-    </div>
-    <div class="app-input">
-      <label>Password</label>
-      <input matInput formControlName="password" type="password" />
-    </div>
-    <div class="flex gap-2 w-[calc(100%_-_32px)] items-start">
-      <input type="checkbox" name="" id="">
-      <div class="flex flex-col py-[5.5px]">
-        <label class="font-semibold">Label</label>
-        <div class="text-[var(--background-500)]">Description</div>
-      </div>
-    </div>
-    <button class="btn-primary w-full cursor-pointer" (click)="login()">
-      Sign In
-    </button>
-  </form>
+
 </div>
 
+ <!-- Modal -->
+ <div
+ *ngIf="isModalOpen"
+ class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+>
+ <div class="bg-white w-96 rounded-lg shadow-lg p-6 relative">
+   <h2 class="text-xl font-bold mb-4">Choose Your Plan</h2>
+   <ul>
+     <li
+       *ngFor="let option of paymentOptions"
+       class="p-3 mb-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
+       (click)="selectOption(option)"
+     >
+       <div class="flex justify-between">
+         <span>{{ option.name }}</span>
+         <span class="font-bold">{{ option.price }}</span>
+       </div>
+     </li>
+   </ul>
 
-
+   <img
+    (click)="closeModal()"
+    src="assets/icons/svg/cancel.svg"
+    class="absolute top-2 right-2 w-[5%] cursor-pointer" alt="cancel logo"/>
+ </div>
+</div>
