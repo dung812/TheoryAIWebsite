@@ -15,6 +15,7 @@ export class ThemingComponent {
     '--primary-100': '#C1DFFF',
     '--primary-bg-color': '#EDF6FF',
     '--secondary-darker-bg-color': '#FFEFD0',
+    '--secondary-darker-bg-color-hover': '#F9DEA8',
     '--background-color': '#D1D1D1',
     '--dashboard-left-navigation-bar-bg-color': '#F9FBFC',
     '--secondary-bg-color': '#FCF8F0',
