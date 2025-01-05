@@ -8,35 +8,29 @@ import { Component } from '@angular/core';
 export class FaqComponent {
   faqs = [
     {
-      question: 'How does the AI Tutor assist me?',
-      answer:
-        'The AI Tutor provides personalized learning experiences, adapting to your progress to maximize your understanding of key concepts.',
+      question: 'app.home.faq.faq_1.question',
+      answer: 'app.home.faq.faq_1.answer',
     },
     {
-      question: 'Can I access the platform on mobile devices?',
-      answer:
-        'Yes, our platform is fully responsive and can be accessed on both desktop and mobile devices.',
+      question: 'app.home.faq.faq_2.question',
+      answer: 'app.home.faq.faq_2.answer',
     },
     {
-      question: 'What payment methods do you accept?',
-      answer:
-        'We accept various payment methods including Visa, MasterCard, and PayPal to ensure a secure and convenient checkout process.',
+      question: 'app.home.faq.faq_3.question',
+      answer: 'app.home.faq.faq_3.answer',
     },
     {
-      question: 'Is there a free trial available?',
-      answer:
-        'Yes, we offer a free trial to help you evaluate the platform before committing to a subscription.',
+      question: 'app.home.faq.faq_4.question',
+      answer: 'app.home.faq.faq_4.answer',
     },
     {
-      question: 'How does the adaptive learning feature work?',
-      answer:
-        'Our adaptive learning feature identifies your weak areas and tailors lessons to improve your performance efficiently.',
+      question: 'app.home.faq.faq_5.question',
+      answer: 'app.home.faq.faq_5.answer',
     },
     {
-      question: 'How does the AI Tutor assist me?',
-      answer:
-        'The AI Tutor provides personalized learning experiences, adapting to your progress to maximize your understanding of key concepts.',
-    }
+      question: 'app.home.faq.faq_6.question',
+      answer: 'app.home.faq.faq_6.answer',
+    },
   ];
 
   // Array to manage the state of each accordion item

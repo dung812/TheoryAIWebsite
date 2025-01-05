@@ -6,9 +6,7 @@
         <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo"/>
       </a>
       <p class="text-gray-600 mt-4">
-        Blandit sit commodo aliquet volutpat adipiscing sed phasellus accumsan.
-        Sit quam bibendum sociis varius cras imperdiet quis donec in. Volutpat
-        quis purus.
+        {{ 'app.footer.title' | translate }}
       </p>
       <div class="flex space-x-4 mt-4">
         <a href="#">
@@ -31,22 +29,22 @@
 
     <!-- Contact Us -->
     <div>
-      <h4 class="text-lg font-bold text-gray-800">Contact Us</h4>
+      <h4 class="text-lg font-bold text-gray-800">{{ 'app.footer.contactUs' | translate }}</h4>
       <ul class="mt-4 space-y-2">
         <li class="flex items-center space-x-2">
           <img src="assets/icons/svg/mail.svg" alt="mail logo"/>
           <a href="mailto:support@yourplatform.com" class="text-gray-600">
-            support&#64;yourplatform.com
+            {{ 'app.footer.email' | translate }}
           </a>
         </li>
         <li class="flex items-center space-x-2">
           <img src="assets/icons/svg/phone.svg" alt="phone logo"/>
-          <span class="text-gray-600">+31 6 12345678</span>
+          <span class="text-gray-600">{{ 'app.footer.phone' | translate }}</span>
         </li>
         <li class="flex items-center space-x-2">
           <img src="assets/icons/svg/house.svg" alt="house logo"/>
           <span class="text-gray-600">
-            1234 AB, Amsterdam, Netherlands
+            {{ 'app.footer.address' | translate }}
           </span>
         </li>
       </ul>
@@ -56,30 +54,26 @@
     <div>
       <h4 class="text-lg font-bold text-gray-800">Quick Links</h4>
       <ul class="mt-4 space-y-2">
-        <li><a href="#" class="text-gray-600 hover:text-gray-800">Home</a></li>
-        <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Our Platform</a>
+        <li *ngFor="let item of navItems">
+          <a
+          (click)="scrollToSection(item.id, $event)"
+          [href]="item.link"
+          class="nav-link text-gray-600 hover:text-gray-800 cursor-pointer">
+            {{ item.name | translate }}
+          </a>
         </li>
-        <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">How It Works</a>
-        </li>
-        <li><a href="#" class="text-gray-600 hover:text-gray-800">Pricing</a></li>
-        <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Testimonials</a>
-        </li>
-        <li><a href="#" class="text-gray-600 hover:text-gray-800">FAQ</a></li>
       </ul>
     </div>
 
     <!-- Legal -->
     <div>
-      <h4 class="text-lg font-bold text-gray-800">Legal</h4>
+      <h4 class="text-lg font-bold text-gray-800">{{ 'app.footer.legal' | translate }}</h4>
       <ul class="mt-4 space-y-2">
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">{{ 'app.footer.privacyPolicy' | translate }}</a>
         </li>
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Terms of Service</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">{{ 'app.footer.termsOfService' | translate }}</a>
         </li>
       </ul>
     </div>

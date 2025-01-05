@@ -1,0 +1,220 @@
+{
+  "app": {
+    "title": "TheoryAI",
+    "header": {
+      "home": "Home",
+      "our-platform": "Our Platform",
+      "pricing": "Pricing",
+      "how-it-works": "How it works",
+      "testimonials": "Testimonials",
+      "faq": "FAQ",
+      "login": "Login",
+      "signUp": "Sign Up"
+    },
+    "footer": {
+      "title": "Blandit sit commodo aliquet volutpat adipiscing sed phasellus accumsan. Sit quam bibendum sociis varius cras imperdiet quis donec in. Volutpat quis purus.",
+      "contact-us": "Contact Us",
+      "quick-links": "Quick Links",
+      "legal": "Legal",
+      "email": "support@yourplatform.com",
+      "phone": "+31 6 12345678",
+      "address": "Street 123, 1234 AB, City",
+      "privacy-policy": "Privacy Policy",
+      "terms-of-service": "Terms of Service"
+    },
+    "home": {
+      "start_your_journey_title": "Start Your Journey to Success Today!",
+      "start_your_journey_description": "Choose a plan and begin learning instantly.",
+      "sign_up_now": "Sign Up Now",
+      "hero": {
+        "master-the-dutch": "Master the Dutch <span class='text-blue-500'>Driving Theory Test</span> with <span class='text-blue-500'>AI-Powered</span> Personalized Learning",
+        "master-the-dutch-description": "Revolutionize your preparation with 24/7 AI assistance and personalized learning experiences. Grasp every concept thoroughly and pass on your first try.",
+        "get-started": "Get Started",
+        "start-free-trial": "Start Free Trial",
+        "trusted-by": "Trusted by 5,000 Dutch Students",
+        "first-time-pass-rate": "98% First Time Pass Rate"
+      },
+      "platform": {
+        "features-title": "Features Platform",
+        "feature_1_title": "Your 24/7 Personal AI Tutor",
+        "feature_1_description": "Specialized in dutch traffic rules and regulations. available anytime to answer questions and explain content in detail.",
+        "feature_2_title": "Engaging Animated Video Lessons",
+        "feature_2_description": "Animated videos for each chapter. interactive quizzes following each lesson.",
+        "feature_3_title": "Personalized Adaptive Learning",
+        "feature_3_description": "Generates new playlists based on your results. focuses on areas that need improvement.",
+        "feature_4_title": "Your 24/7 Personal AI Tutor",
+        "feature_4_description": "Specialized in dutch traffic rules and regulations. available anytime to answer questions and explain content in detail.",
+        "feature_5_title": "Realistic CBR Mock Exams",
+        "feature_5_description": "7 tests with 65 questions each. simulates the actual driving theory exam experience.",
+        "feature_6_title": "Interactive Quizzes with Immediate Feedback",
+        "feature_6_description": "Click-to-answer style quizzes. ensures engagement and comprehension.",
+        "feature_7_title": "In-Depth Exam Explanations",
+        "feature_7_description": "Detailed analysis provided after completing practice exams. helps you understand mistakes and learn from them.",
+        "feature_8_title": "Flashcards for Easy Memorization",
+        "feature_8_description": "Covers important topics like road signs and key numbers. ideal for quick revision."
+      },
+      "pricing": {
+        "pricing_title": "Choose Your Plan and Start Learning Today",
+        "pricing_subtitle": "All plans include full access to our AI-powered learning platform—select the duration that suits your study needs.",
+        "plans": {
+          "free": {
+            "title": "Free Access",
+            "price": "Free",
+            "feature1": "AI Tutor Chatbot (24/7 assistance)",
+            "feature2": "Engaging Video Lessons",
+            "feature3": "Adaptive Learning Playlists",
+            "feature4": "Practice Exams (CBR Mock Exams)",
+            "feature5": "Interactive Quizzes",
+            "feature6": "Reading Lessons",
+            "feature7": "In-Depth Exam Explanations",
+            "feature8": "Flashcards Trainer for Memorization",
+            "cta": "Try Now"
+          },
+          "7_days": {
+            "title": "7 Days Access",
+            "price": "€12.99",
+            "feature1": "AI Tutor Chatbot (24/7 assistance)",
+            "feature2": "Engaging Video Lessons",
+            "feature3": "Adaptive Learning Playlists",
+            "feature4": "Practice Exams (CBR Mock Exams)",
+            "feature5": "Interactive Quizzes",
+            "feature6": "Reading Lessons",
+            "feature7": "In-Depth Exam Explanations",
+            "feature8": "Flashcards Trainer for Memorization",
+            "cta": "Buy Now"
+          },
+          "14_days": {
+            "title": "14 Days Access",
+            "price": "€24.99",
+            "feature1": "AI Tutor Chatbot (24/7 assistance)",
+            "feature2": "Engaging Video Lessons",
+            "feature3": "Adaptive Learning Playlists",
+            "feature4": "Practice Exams (CBR Mock Exams)",
+            "feature5": "Interactive Quizzes",
+            "feature6": "Reading Lessons",
+            "feature7": "In-Depth Exam Explanations",
+            "feature8": "Flashcards Trainer for Memorization",
+            "cta": "Buy Now"
+          },
+          "30_days": {
+            "title": "30 Days Access",
+            "price": "€49.99",
+            "badge": "Most Popular",
+            "feature1": "AI Tutor Chatbot (24/7 assistance)",
+            "feature2": "Engaging Video Lessons",
+            "feature3": "Adaptive Learning Playlists",
+            "feature4": "Practice Exams (CBR Mock Exams)",
+            "feature5": "Interactive Quizzes",
+            "feature6": "Reading Lessons",
+            "feature7": "In-Depth Exam Explanations",
+            "feature8": "Flashcards Trainer for Memorization",
+            "cta": "Buy Now"
+          }
+        }
+      },
+      "how-it-works": {
+        "title": "How It Works",
+        "step_1": {
+          "step1": "Step 1",
+          "title": "Sign Up",
+          "description": "Create your account in just a few clicks."
+        },
+        "step_2": {
+          "step2": "Step 2",
+          "title": "First Choose Your Plan",
+          "description": "Select the access duration that fits your needs."
+        },
+        "step_3": {
+          "step3": "Step 3",
+          "title": "Start Learning",
+          "description": "Dive into our interactive courses and practice exams."
+        },
+        "step_4": {
+          "step4": "Step 4",
+          "title": "Ace the Test",
+          "description": "Pass your theory test with confidence!"
+        }
+      },
+      "testimonials": {
+        "title": "Hear from Our Successful Students",
+        "subtitle": "Join thousands who have aced their theory test with our platform.",
+        "feature_highlight": "Features Highlight",
+        "ready_to_be_our_next_success_story": "Ready to be our next success story?",
+        "get_started": "Get Started Now",
+        "testimonial_1": {
+          "name": "Sophie van Dijk",
+          "review": "The AI Tutor was a game-changer for me! It helped me understand complex topics easily.",
+          "feature1": "AI Tutor Chatbot",
+          "feature2": "Interactive Quizzes"
+        },
+        "testimonial_2": {
+          "name": "Mark Jansen",
+          "review": "The practice exams were just like the real thing. I felt fully prepared on test day.",
+          "feature1": "Practice Exams",
+          "feature2": "In-Depth Explanations"
+        },
+        "testimonial_3": {
+          "name": "Lisa de Boer",
+          "review": "Adaptive learning playlists made studying so efficient. I knew exactly what to focus on.",
+          "feature1": "Adaptive Learning Playlists",
+          "feature2": "Flashcards Trainer"
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "faq_1": {
+          "question": "How does the AI Tutor assist me?",
+          "answer": "The AI Tutor provides personalized learning experiences, adapting to your progress to maximize your understanding of key concepts."
+        },
+        "faq_2": {
+          "question": "Can I access the platform on mobile devices?",
+          "answer": "Yes, our platform is fully responsive and can be accessed on both desktop and mobile devices."
+        },
+        "faq_3": {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept various payment methods including Visa, MasterCard, and PayPal to ensure a secure and convenient checkout process."
+        },
+        "faq_4": {
+          "question": "Is there a free trial available?",
+          "answer": "Yes, we offer a free trial to help you evaluate the platform before committing to a subscription."
+        },
+        "faq_5": {
+          "question": "How does the adaptive learning feature work?",
+          "answer": "Our adaptive learning feature identifies your weak areas and tailors lessons to improve your performance efficiently."
+        },
+        "faq_6": {
+          "question": "How does the AI Tutor assist me?",
+          "answer": "The AI Tutor provides personalized learning experiences, adapting to your progress to maximize your understanding of key concepts."
+        }
+      }
+    }
+
+  },
+  "authentication": {
+    "sign_up_with_payment": {
+      "email": "Email",
+      "password": "Password",
+      "sign_in": "Sign In",
+      "sign_in_with_google": "Sign in with Google",
+      "sign_in_with_microsoft": "Sign in Microsoft",
+      "payment": "Choose your payment method",
+      "label": "Label",
+      "description": "Description",
+      "auto_theory": "Auto Theory",
+      "7_cbr_exam_module": "7 CBR exam module",
+      "payment_options": {
+        "ideal": "iDEAL",
+        "card": "Card",
+        "bancontact": "Bancontact",
+        "payment_button": "Payment button"
+      },
+      "scanQrCode": "Scan the QR code with your bank app to complete the payment",
+      "choose_your_plan": "Choose Your Plan"
+    }
+  },
+  "page_not_found": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist.",
+    "back_to_home": "Go back to Home"
+  }
+}

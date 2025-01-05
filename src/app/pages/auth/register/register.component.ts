@@ -12,14 +12,14 @@ export class RegisterComponent {
   isShowQr = true; // QR code visibility
   isModalOpen = false; // Modal visibility
   selectedOption = {
-    name: '30 Days Access',
-    price: '€49.99',
+    name: '',
+    price: '',
   }; // Stores selected option
   paymentOptions = [
-    { name: 'Free Access', price: 'Free' },
-    { name: '7 Days Access', price: '€12.99' },
-    { name: '14 Days Access', price: '€24.99' },
-    { name: '30 Days Access', price: '€49.99' },
+    { name: 'app.home.pricing.plans.free.title', price: 'app.home.pricing.plans.free.price' },
+    { name: 'app.home.pricing.plans.7_days.title', price: 'app.home.pricing.plans.7_days.price' },
+    { name: 'app.home.pricing.plans.14_days.title', price: 'app.home.pricing.plans.14_days.price' },
+    { name: 'app.home.pricing.plans.30_days.title', price: 'app.home.pricing.plans.30_days.price' },
   ];
 
   // Register with order
@@ -27,22 +27,22 @@ export class RegisterComponent {
   selectOptions: any = [
     {
       value: 1,
-      label: 'iDEAL',
+      label: 'authentication.sign_up_with_payment.payment_options.ideal',
       image: '/assets/icons/svg/fa-brands_ideal.svg',
     },
     {
       value: 2,
-      label: 'Card',
+      label: 'authentication.sign_up_with_payment.payment_options.card',
       image: '/assets/icons/svg/logos_mastercard.svg',
     },
     {
       value: 2,
-      label: 'Bancontact',
+      label: 'authentication.sign_up_with_payment.payment_options.bancontact',
       image: '/assets/icons/svg/cib_bancontact.svg',
     },
     {
       value: 2,
-      label: 'Payment button',
+      label: 'authentication.sign_up_with_payment.payment_options.payment_button',
       image: '/assets/icons/svg/icon-park_flash-payment.svg',
     },
   ];
@@ -51,7 +51,9 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private router: Router,
     private socialAuthService: SocialAuthService,
-  ) {}
+  ) {
+    this.selectedOption = this.paymentOptions[0];
+  }
 
   ngOnInit() {
     this.socialAuthService.authState.subscribe((user) => {

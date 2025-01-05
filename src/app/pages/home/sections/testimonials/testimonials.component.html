@@ -2,7 +2,7 @@
   <div class="container mx-auto px-6 lg:px-20">
     <div class="flex flex-col md:flex-row justify-between items-center mb-12">
       <h2 class="text-4xl font-bold text-gray-800 mb-8 md:w-2/6">
-        Hear from Our Successful Students
+        {{ 'app.home.testimonials.title' | translate }}
       </h2>
       <div class="flex flex-col mb-3 md:mb-12">
         <div class="flex -space-x-4 rtl:space-x-reverse">
@@ -14,85 +14,38 @@
           <img class="w-8 h-8 border-2 border-white rounded-full object-cover" src="assets/imgs/png/group-persion-6.png" alt="people avatar">
         </div>
         <p class="text-gray-600 w-3/4">
-          Join thousands who have aced their theory test with our platform.
+          {{ 'app.home.testimonials.subtitle' | translate }}
         </p>
       </div>
     </div>
 
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       <!-- Testimonial Card 1 -->
-      <div class="testimonial-card">
+      <div class="testimonial-card"
+        *ngFor="let testimonial of testimonials"
+      >
         <div class="flex items-center gap-2 mb-4">
-          <img class="w-8 h-8 rounded-full" src="assets/imgs/png/sophie-van-dijk.png" alt="Sophie van Dijk">
+          <img class="w-8 h-8 rounded-full" [src]="testimonial.image" alt="Sophie van Dijk">
           <div>
-            <h3 class="text-lg font-semibold text-gray-800">Sophie van Dijk</h3>
+            <h3 class="text-lg font-semibold text-gray-800">{{ testimonial.name | translate }}</h3>
             <div class="text-yellow-400 text-sm">★★★★★</div>
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          The AI Tutor was a game-changer for me! It helped me understand complex topics easily.
+          {{ testimonial.review | translate }}
         </p>
-        <p class="text-sm mb-2">Features Highlight</p>
+        <p class="text-sm mb-2">{{ 'app.home.testimonials.feature_highlight' | translate }}</p>
         <div class="text-sm flex flex-col gap-2">
-          <div>
-            <span class="step-badges">AI Tutor Chatbot</span>
-          </div>
-          <div>
-            <span class="step-badges">Interactive Quizzes</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial Card 2 -->
-      <div class="testimonial-card">
-        <div class="flex items-center gap-2 mb-4">
-          <img class="w-8 h-8 rounded-full" src="assets/imgs/png/mark-jansen.png" alt="Mark Jansen">
-          <div>
-            <h3 class="text-lg font-semibold text-gray-800">Mark Jansen</h3>
-            <div class="text-yellow-400 text-sm">★★★★★</div>
-          </div>
-        </div>
-        <p class="text-gray-600 mb-4">
-          The practice exams were just like the real thing. I felt fully prepared on test day.
-        </p>
-        <p class="text-sm mb-2">Features Highlight</p>
-        <div class="text-sm flex flex-col gap-2">
-          <div>
-            <span class="step-badges">Practice Exams</span>
-          </div>
-          <div>
-            <span class="step-badges">In-Depth Explanations</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial Card 3 -->
-      <div class="testimonial-card">
-        <div class="flex items-center gap-2 mb-4">
-          <img class="w-8 h-8 rounded-full" src="assets/imgs/png/lisa-de-boer.png" alt="Lisa de Boer">
-          <div>
-            <h3 class="text-lg font-semibold text-gray-800">Lisa de Boer</h3>
-            <div class="text-yellow-400 text-sm">★★★★★</div>
-          </div>
-        </div>
-        <p class="text-gray-600 mb-4">
-          Adaptive learning playlists made studying so efficient. I knew exactly what to focus on.
-        </p>
-        <p class="text-sm mb-2">Features Highlight</p>
-        <div class="text-sm flex flex-col gap-2">
-          <div>
-            <span class="step-badges">Adaptive Learning Playlists</span>
-          </div>
-          <div>
-            <span class="step-badges">Flashcards Trainer</span>
+          <div *ngFor="let feature of testimonial.featureHighlight">
+            <span class="step-badges">{{ feature| translate }}</span>
           </div>
         </div>
       </div>
     </div>
     <div class="text-center mt-12">
-      <p class="text-gray-600 mb-4">Ready to be our next success story?</p>
+      <p class="text-gray-600 mb-4">{{ 'app.home.testimonials.ready_to_be_our_next_success_story' | translate }}</p>
       <a routerLink="/signup" class="btn-primary">
-        Get Started Now
+        {{ 'app.home.testimonials.get_started' | translate }}
       </a>
     </div>
   </div>

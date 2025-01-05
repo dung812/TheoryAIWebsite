@@ -8,12 +8,12 @@ import { EnvironmentService } from '@lib/services/environment.service';
 })
 export class HeaderComponent {
   navItems = [
-    { name: 'Home', id: 'hero', link: '#hero' },
-    { name: 'Our Platform', id: 'platform', link: '#platform' },
-    { name: 'Pricing', id: 'pricing', link: '#pricing' },
-    { name: 'How It Works', id: 'how-it-works', link: '#how-it-works' },
-    { name: 'Testimonials', id: 'testimonials', link: '#testimonials' },
-    { name: 'FAQ', id: 'faq', link: '#faq' },
+    { name: 'app.header.home', id: 'hero', link: '#hero' },
+    { name: 'app.header.our-platform', id: 'platform', link: '#platform' },
+    { name: 'app.header.pricing', id: 'pricing', link: '#pricing' },
+    { name: 'app.header.how-it-works', id: 'how-it-works', link: '#how-it-works' },
+    { name: 'app.header.testimonials', id: 'testimonials', link: '#testimonials' },
+    { name: 'app.header.faq', id: 'faq', link: '#faq' },
   ];
 
   redirectLoginUrl = '';

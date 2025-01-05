@@ -1,7 +1,7 @@
 <section id="pricing" class="py-28">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-gray-800 mb-4 md:w-1/3 mx-auto text-center">Choose Your Plan and Start Learning Today</h2>
-    <p class="text-center">All plans include full access to our AI-powered learning platform—select the duration that suits your study needs.</p>
+    <h2 class="text-3xl font-bold text-gray-800 mb-4 md:w-1/3 mx-auto text-center">{{ 'app.home.pricing.pricing_title' | translate }}</h2>
+    <p class="text-center">{{ 'app.home.pricing.pricing_subtitle' | translate }}</p>
 
     <div class="mt-4 md:mt-16 grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
       <div
@@ -15,16 +15,16 @@
         </span>
       </div>
       <div class="plan-card-content border-blue-500">
-        <h3 class="text-2xl font-semibold text-gray-800">{{plan.title}}</h3>
-        <p class="text-4xl font-bold text-gray-800 mt-4">{{plan.price}}</p>
+        <h3 class="text-2xl font-semibold text-gray-800">{{plan.title | translate}}</h3>
+        <p class="text-4xl font-bold text-gray-800 mt-4">{{plan.price | translate}}</p>
         <ul class="mt-6 space-y-2 text-gray-700" *ngFor="let feature of plan.features">
             <li class="flex items-center gap-3">
               <img src="assets/icons/svg/check.svg" alt="checked logo"/>
-              <span>{{feature}}</span>
+              <span>{{feature | translate}}</span>
             </li>
         </ul>
         <a routerLink="/signup" class="btn-primary cursor-pointer block text-center w-full mt-6">
-          {{plan.buttonText}}
+          {{plan.buttonText | translate}}
         </a>
       </div>
 

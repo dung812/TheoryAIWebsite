@@ -18,7 +18,7 @@
           class="nav-link"
           (click)="scrollToSection(item.id, $event)"
         >
-          {{ item.name }}
+          {{ item.name | translate }}
         </a>
         <img
         (click)="toggleMobileMenu()"
@@ -30,8 +30,8 @@
 
     <!-- Call-to-Action Buttons -->
     <div class="hidden md:flex space-x-4">
-      <a class="btn-login text-[var(--primary-500)] cursor-pointer" (click)="navigateToLoginPage()">Login</a>
-      <a routerLink="/signup" class="btn-primary">Sign Up</a>
+      <a class="btn-login text-[var(--primary-500)] cursor-pointer" (click)="navigateToLoginPage()">{{ 'app.header.login' | translate }}</a>
+      <a routerLink="/signup" class="btn-primary">{{ 'app.header.signUp' | translate }}</a>
     </div>
 
     <button

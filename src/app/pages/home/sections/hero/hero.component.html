@@ -1,24 +1,23 @@
 <section id="hero" class="relative bg-light" style="height: calc(100vh - 72px);">
   <div class="container mx-auto px-4 text-center py-20">
-    <h1 class="md:w-2/3 mx-auto text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-      Master the Dutch <span class="text-blue-500">Driving Theory Test</span> with
-      <span class="text-blue-500">AI-Powered</span> Personalized Learning
-    </h1>
+    <h1
+    class="md:w-2/3 mx-auto text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+    [innerHTML]="'app.home.hero.master-the-dutch' | translate"
+    ></h1>
     <p class="text-lg text-gray-600 mb-8 md:w-2/3 mx-auto">
-      Revolutionize your preparation with 24/7 AI assistance and personalized learning experiences.
-      Grasp every concept thoroughly and pass on your first try.
+      {{ 'app.home.hero.master-the-dutch-description' | translate }}
     </p>
     <div class="space-x-4">
       <a routerLink="/signup" class="btn-primary">
-        Get Started Now
+        {{ 'app.home.hero.get-started' | translate }}
       </a>
       <a routerLink="/signup" class="text-blue-500 px-6 py-3 border-none">
-        Start Free Trial
+        {{ 'app.home.hero.start-free-trial' | translate }}
       </a>
     </div>
     <div class="text-center text-gray-500 mt-6 flex flex-col md:flex-row gap-4 justify-center">
-      <div class="flex justify-center gap-2">Trusted by Over 5,000 Dutch Students <img src="assets/icons/svg/check-circle.svg" alt="checked logo"/></div>
-      <div class="flex justify-center gap-2">98% First-Time Pass Rate <img src="assets/icons/svg/trophy.svg" alt="checked logo"/></div>
+      <div class="flex justify-center gap-2">{{ 'app.home.hero.trusted-by' | translate }} <img src="assets/icons/svg/check-circle.svg" alt="checked logo"/></div>
+      <div class="flex justify-center gap-2">{{ 'app.home.hero.first-time-pass-rate' | translate }} <img src="assets/icons/svg/trophy.svg" alt="checked logo"/></div>
     </div>
   </div>
 

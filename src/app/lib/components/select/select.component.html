@@ -7,7 +7,7 @@
       <div
         *ngIf="value"
         class="flex justify-between border-[var(--background-color)] items-center">
-        <div>{{ value.label }}</div>
+        <div>{{ value.label | translate }}</div>
         <img class="h-[20px]" [src]="value.image" [alt]="value.label" />
       </div>
     </div>
@@ -18,7 +18,7 @@
         *ngFor="let option of options"
         class="flex justify-between border-b border-[var(--background-color)] items-center px-4npm"
         (click)="selectItem($event, option)">
-        <div>{{ option.label }}</div>
+        <div>{{ option.label | translate }}</div>
         <img class="h-[20px]" [src]="option.image" [alt]="option.label" />
       </div>
     </div>
