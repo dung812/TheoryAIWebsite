@@ -57,6 +57,8 @@ export class HeaderComponent {
 
   private onScroll(): void {
     const scrollPosition = window.scrollY;
+    const headerHeight = 72
+
     this.ngZone.run(() => {
       for (const item of this.navItems) {
         const section = document.getElementById(item.id);
@@ -65,8 +67,8 @@ export class HeaderComponent {
           const offsetHeight = section.offsetHeight;
 
           if (
-            scrollPosition >= offsetTop - 100 &&
-            scrollPosition < offsetTop + offsetHeight
+            scrollPosition >= offsetTop - headerHeight - 100 &&
+            scrollPosition < offsetTop + offsetHeight - headerHeight
           ) {
             this.activeSection = item.id;
             break;
