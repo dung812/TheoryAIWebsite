@@ -1,109 +1,153 @@
-
-
 <div class="flex flex-col lg:flex-row min-h-screen p-10">
-    <div class="flex-1 basis-1/2 flex justify-center">
+  <div class="flex-1 basis-1/2 flex justify-center">
+    <div>
       <form
-          [formGroup]="loginWithPaymentForm"
-          class="authentication-form flex flex-col items-center gap-4">
-          <img src="assets/icons/svg/theoryai-logo.svg" alt="theoryai logo" class="mb-8"/>
-          <div
-            class="w-full border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] hover:bg-[var(--secondary-darker-bg-color-hover)] rounded-[8px] p-4 flex justify-between cursor-pointer" (click)="openModal(false)">
-            <div class="flex flex-col gap-4">
-              <div class="text-[var(--secondary-500)] font-bold text-[21px]">
-                {{ 'authentication.sign_up_with_payment.auto_theory' | translate }}
-              </div>
-              <div class="flex flex-col">
-                <div class="flex gap-1">
-                  {{selectedOption.name | translate}}
-                </div>
-                <div class="flex gap-1">
-                  {{ 'authentication.sign_up_with_payment.7_cbr_exam_module' | translate }}
-                </div>
-              </div>
+        [formGroup]="loginWithPaymentForm"
+        class="authentication-form flex flex-col items-center gap-4"
+      >
+        <img
+          src="assets/icons/svg/theoryai-logo.svg"
+          alt="theoryai logo"
+          class="mb-8"
+        />
+        <div
+          class="w-full border border-solid border-[var(--secondary-500)] bg-[var(--secondary-darker-bg-color)] hover:bg-[var(--secondary-darker-bg-color-hover)] rounded-[8px] p-4 flex justify-between cursor-pointer"
+          (click)="openModal(false)"
+        >
+          <div class="flex flex-col gap-4">
+            <div class="text-[var(--secondary-500)] font-bold text-[21px]">
+              {{
+                "authentication.sign_up_with_payment.auto_theory" | translate
+              }}
             </div>
-            <div class="font-bold flex justify-center items-center">
-              <div>{{selectedOption.price | translate}}</div>
-            </div>
-          </div>
-          <div class="app-input w-full">
-            <label class="mb-2">{{ 'authentication.sign_up_with_payment.payment' | translate }}</label>
-            <app-select
-              class="w-full"
-              formControlName="payment"
-              [options]="selectOptions"></app-select>
-          </div>
-          <div class="app-input !flex-row justify-between gap-4">
-            <app-google-signin
-              (loginWithGoogle)="googleSignin($event)">
-            </app-google-signin>
-            <div class="social-signin cursor-pointer" (click)="loginWithMs()">
-              <img src="assets/icons/svg/microsoft-icon.svg" alt="microsoft logo"/>
-              <div>
-                {{ 'authentication.sign_up_with_payment.sign_in_with_microsoft' | translate }}
+            <div class="flex flex-col">
+              <div class="flex gap-1">
+                {{ selectedOption.name | translate }}
+              </div>
+              <div class="flex gap-1">
+                {{
+                  "authentication.sign_up_with_payment.7_cbr_exam_module"
+                    | translate
+                }}
               </div>
             </div>
           </div>
-          <div class="app-input">
-            <label>{{ 'authentication.sign_up_with_payment.email' | translate }}</label>
-            <input matInput formControlName="email" type="email" />
+          <div class="font-bold flex justify-center items-center">
+            <div>{{ selectedOption.price | translate }}</div>
           </div>
-          <div class="app-input">
-            <label>{{ 'authentication.sign_up_with_payment.password' | translate }}</label>
-            <input matInput formControlName="password" type="password" />
-          </div>
-          <div class="app-input !flex-row gap-2 w-[calc(100%_-_32px)] items-start">
-            <input type="checkbox" name="" id="">
-            <div class="flex flex-col leading-4">
-              <label class="font-semibold mb-2">{{ 'authentication.sign_up_with_payment.label' | translate }}</label>
-              <div class="text-[var(--background-500)]">{{ 'authentication.sign_up_with_payment.description' | translate }}</div>
+        </div>
+        <div class="app-input w-full">
+          <label class="mb-2">{{
+            "authentication.sign_up_with_payment.payment" | translate
+          }}</label>
+          <app-select
+            class="w-full"
+            formControlName="payment"
+            [options]="selectOptions"
+          ></app-select>
+        </div>
+        <div class="app-input !flex-row justify-between gap-4">
+          <app-google-signin (loginWithGoogle)="googleSignin($event)">
+          </app-google-signin>
+          <div class="social-signin cursor-pointer" (click)="loginWithMs()">
+            <img
+              src="assets/icons/svg/microsoft-icon.svg"
+              alt="microsoft logo"
+            />
+            <div>
+              {{
+                "authentication.sign_up_with_payment.sign_in_with_microsoft"
+                  | translate
+              }}
             </div>
           </div>
-          <button class="btn-primary w-full cursor-pointer" (click)="openModal(true)">
-            {{ 'authentication.sign_up_with_payment.sign_in' | translate }}
-          </button>
-        </form>
+        </div>
+        <div class="app-input">
+          <label>{{
+            "authentication.sign_up_with_payment.email" | translate
+          }}</label>
+          <input matInput formControlName="email" type="email" />
+        </div>
+        <div class="app-input">
+          <label>{{
+            "authentication.sign_up_with_payment.password" | translate
+          }}</label>
+          <input matInput formControlName="password" type="password" />
+        </div>
+        <div
+          class="app-input !flex-row gap-2 w-[calc(100%_-_32px)] items-start"
+        >
+          <input type="checkbox" name="" id="" />
+          <div class="flex flex-col leading-4">
+            <label class="font-semibold mb-2">{{
+              "authentication.sign_up_with_payment.label" | translate
+            }}</label>
+            <div class="text-[var(--background-500)]">
+              {{
+                "authentication.sign_up_with_payment.description" | translate
+              }}
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn-primary w-full cursor-pointer"
+          (click)="openModal(true)"
+        >
+          {{ "authentication.sign_up_with_payment.sign_in" | translate }}
+        </button>
+      </form>
     </div>
+  </div>
 
-    <div class="hidden lg:block flex-1 basis-1/2">
-      <img src="assets/imgs/svg/main-dashboard-full2.svg" alt="Dashboard" class="w-[200%]">
-      <div class="text-center lg:text-left ml-9">
-        <h1
+  <div class="hidden lg:block flex-1 basis-1/2">
+    <img
+      src="assets/imgs/svg/main-dashboard-full2.svg"
+      alt="Dashboard"
+      class="w-[200%]"
+    />
+    <div class="text-center lg:text-left ml-9">
+      <h1
         class="text-3xl font-bold mb-4 w-[67%]"
         [innerHTML]="'app.home.hero.master-the-dutch' | translate"
-        ></h1>
-      </div>
+      ></h1>
     </div>
+  </div>
 </div>
 
- <!-- Modal -->
- <div
- *ngIf="isModalOpen"
- class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+<!-- Modal -->
+<div
+  *ngIf="isModalOpen"
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
 >
- <div class="bg-white w-96 rounded-lg shadow-lg p-6 relative">
-
-  <div *ngIf="isShowQr; else showPaymentOptions">
-    <h2 class="text-xl font-bold mb-4">{{ 'authentication.sign_up_with_payment.scanQrCode' | translate }}</h2>
-    <img src="assets/imgs/png/qr-code.png" alt="qr code" class="w-full"/>
+  <div class="bg-white w-96 rounded-lg shadow-lg p-6 relative">
+    <div *ngIf="isShowQr; else showPaymentOptions">
+      <h2 class="text-xl font-bold mb-4">
+        {{ "authentication.sign_up_with_payment.scanQrCode" | translate }}
+      </h2>
+      <img src="assets/imgs/png/qr-code.png" alt="qr code" class="w-full" />
+    </div>
+    <ng-template #showPaymentOptions>
+      <h2 class="text-xl font-bold mb-4">
+        {{ "authentication.sign_up_with_payment.choose_your_plan" | translate }}
+      </h2>
+      <ul>
+        <li
+          *ngFor="let option of paymentOptions"
+          class="p-3 mb-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
+          (click)="selectOption(option)"
+        >
+          <div class="flex justify-between">
+            <span>{{ option.name | translate }}</span>
+            <span class="font-bold">{{ option.price | translate }}</span>
+          </div>
+        </li>
+      </ul>
+    </ng-template>
+    <img
+      (click)="closeModal()"
+      src="assets/icons/svg/cancel.svg"
+      class="absolute top-2 right-2 w-[5%] cursor-pointer"
+      alt="cancel logo"
+    />
   </div>
-  <ng-template #showPaymentOptions>
-    <h2 class="text-xl font-bold mb-4">{{ 'authentication.sign_up_with_payment.choose_your_plan' | translate }}</h2>
-    <ul>
-      <li
-        *ngFor="let option of paymentOptions"
-        class="p-3 mb-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
-        (click)="selectOption(option)"
-      >
-        <div class="flex justify-between">
-          <span>{{ option.name | translate }}</span>
-          <span class="font-bold">{{ option.price | translate }}</span>
-        </div>
-      </li>
-    </ul>
-  </ng-template>
-   <img
-    (click)="closeModal()"
-    src="assets/icons/svg/cancel.svg"
-    class="absolute top-2 right-2 w-[5%] cursor-pointer" alt="cancel logo"/>
- </div>
 </div>
